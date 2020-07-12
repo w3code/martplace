@@ -14,10 +14,14 @@
   align-items: center;
   min-height: 100px;
 
+  &-logo {
+    padding-left: 10px;
+  }
+
   &-seller {
     margin-left: auto;
-    margin-right: 25px;
-    padding: 13px 18px;
+    margin-right: 50px;
+    padding: 10px 18px;
     background-color: $button;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 25px;
@@ -38,41 +42,38 @@
 
 .header__notification {
   min-width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  position: relative;
 
-  &-alarm,
-  &-mail {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  &-alarm::before {
+    position: absolute;
+    font-family: 'Linearicons-Free';
+    content: '\e858';
+    font-size: 20px;
+    top: -2px;
+    right: 80px;
   }
 
-  &-alarm {
-    width: 17px;
-    height: 20px;
-    background-image: url("../images/icons/alarm.png");
-  }
-
-  &-mail {
-    width: 21px;
-    height: 14px;
-    background-image: url("../images/icons/mail.png");
+  &-mail::before {
+    position: absolute;
+    font-family: 'Linearicons-Free';
+    content: '\e818';
+    font-size: 20px;
+    top: -4px;
+    right: 30px;
   }
 }
 
 .header__cart {
   min-width: 70px;
-  text-align: center;
+  position: relative;
 
-  &-icon {
-    width: 18px;
-    height: 20px;
-    background-image: url("../images/icons/cart.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  &-icon::before {
+    position: absolute;
+    font-family: 'Linearicons-Free';
+    content: '\e82e';
+    top: -2px;
+    right: 46px;
+    font-size: 20px;
   }
 }
 
@@ -100,7 +101,6 @@
   }
 
   &-info {
-    font-family: "Quicksand-Bold";
     font-weight: 700;
 
     a {
@@ -128,7 +128,7 @@
     align-items: center;
 
     li {
-      font-family: "Quicksand-Bold";
+      font-family: "Quicksand";
       font-weight: 700;
       text-transform: uppercase;
       color: $header;
@@ -155,11 +155,11 @@
       height: 46px;
       border: 1px solid #d9dfe5;
       font-size: 15px;
-      font-weight: 400;
+      
 
       &::placeholder {
         color: #898f96;
-        font-weight: 400;
+      
       }
 
       &:focus {
@@ -177,6 +177,16 @@
       right: 0px;
       top: 0px;
       cursor: pointer;
+
+      &::before {
+        position: absolute;
+        font-family: 'Linearicons-Free';
+        font-size: 16px;
+        color: #fff;
+        content: '\e86f';
+        top: 14px;
+        right: 24px;
+      }
     }
   }
 }
@@ -277,8 +287,6 @@
     right: 0px;
     background-color: rgb(255, 255, 255);
     padding: 40px 40px;
-
-
   }
 
   &-form {
@@ -293,19 +301,17 @@
       outline: none;
       border: 1px solid #dcdcdc;
       border-radius: 3px;
-      
+
     }
-    .select{
+
+    .select {
       &::before {
         position: absolute;
-        content: " ";
-        width: 20px;
-        height: 12px;
-        top: 23px;
+        font-family: 'Linearicons-Free';
+        font-size: 16px;
+        content: '\e874';
+        top: 20px;
         right: 270px;
-        background-image: url(../images/icons/chevron-down.svg);
-        background-position: center;
-        background-repeat: no-repeat;
       }
     }
 
@@ -322,6 +328,7 @@
       outline: none;
       appearance: none;
     }
+
     button {
       min-width: 220px;
       background-color: $button;
@@ -331,7 +338,50 @@
       margin-left: 30px;
       margin-right: 0px;
       color: #fff;
-      
     }
+  }
+}
+
+.features__inner {
+  padding: 185px 0px 120px;
+}
+
+.features__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-item {
+    padding: 195px 40px 50px;
+    background-position: center 40px;
+    background-repeat: no-repeat;
+    background-size: 112px;
+
+    &:hover {
+      background-color: #fff;
+      box-shadow: 0px 2px 50px 0px rgba(0, 0, 0, 0.08);
+    }
+
+    &:nth-child(1) {
+      background-image: url(../images/icons/feature-icon1.png);
+    }
+
+    &:nth-child(2) {
+      background-image: url(../images/icons/feature-icon1.png);
+    }
+
+    &:nth-child(3) {
+      background-image: url(../images/icons/feature-icon3.png);
+    }
+  }
+
+  &-title {
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  &-text{
+    text-align: center;
   }
 }
