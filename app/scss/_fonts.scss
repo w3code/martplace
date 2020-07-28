@@ -34,14 +34,12 @@
 	font-style: normal;
 }
 
-.lnr {
+[class^="lnr-"], [class*=" lnr-"]  {
 	font-family: 'Linearicons-Free';
-	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
-	line-height: 1;
 
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
